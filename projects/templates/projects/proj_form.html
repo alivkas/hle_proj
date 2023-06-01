@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'styles/editProj.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap" rel="stylesheet">
+    <title>Edit Project</title>
+</head>
+<body>
+    <header>
+        <a href="{% url 'projects' %}" class="logo">FOLIo</a>
+            <a href="" class="text1">Для вас</a>
+            <a href="" class="text2">Подписки</a>
+            <a href="{% url 'inbox' %}" class="text3">Чаты</a>
+            <a href="" class="text4">Вы сохранили</a>
+            <a href="" class="text5">О нас</a>
+            <img class="around" src="{% static 'img/Ellipse 4.png' %}" alt="around">
+                <img class="profile" src="{{ profile.image.url }}" alt="profile">
+            <nav class="menu" id="menu">
+                <a class="close" href="javascript:void(0)" onclick="closeMenu()">&#10006;</a>
+                <a href="{% url 'account' %}">Профиль</a>
+                <a href="{% url 'logout' %}">Выход</a>
+            </nav>
+            <span onclick="openMenu()"><img class="arrow" src="{% static 'img/стрелка.png' %}" alt="arrow"></span>
+            <script src="{% static 'js/mainPage.js' %}"></script>
+    </header>
+        <container>
+            <div class="post-logo">
+                <img class="post-logo-img" src="{% static 'img/изображение 10.png' %}" alt="post-logo-img">
+            </div>
+        </container>
+        <container>
+
+                <div class="block-prof">
+                    <form class="form" method="POST" enctype="multipart/form-data">
+                        {% csrf_token %}
+
+                        <div class="name">Теги</div>
+
+                        <div class="town">Скриншот проекта</div>
+
+                        <div class="opisanie">
+                            <input class="opisaniee" id="id_title" type="text" name="title"
+                                placeholder="Название проекта" value="{{ project.title }}"/>
+                        </div>
+
+                        <div class="vdohnovenie">
+                            <input class="vdohnoveniee" id="id_slug" type="text" name="slug"
+                                placeholder="Слаг" value="{{ project.slug }}"/>
+                        </div>
+
+                        <div class="achizment">
+                            <input class="achizmentt" id="id_description" type="text" name="description"
+                                placeholder="Описание" value="{{ project.description }}"/>
+                        </div>
+
+                        <div class="github">
+                            <input class="githubb" id="id_source_link" type="text" name="source_link"
+                                placeholder="Проект на GitHub" value="{{ project.source_link }}"/>
+                        </div>
+
+                        <div class="password">
+                            <label for="formInput#text"></label>
+                            <input class="passwordd" type="text" name="newtags" placeholder="Добавьте собственные теги">
+                        </div>
+
+                        <div class="repeat">
+                            <img class="repeatt" src="{{ project.image.url }}">
+                            <input class="input__file" type="file" name="image" accept="image/*" multiple>
+                        </div>
+
+                        <button class="save" type="submit">Опубликовать</button>
+                    </form>
+                </div>
+
+        </container>
+</body>
+</html>

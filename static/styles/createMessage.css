@@ -1,0 +1,483 @@
+body{
+    position: relative;
+    height: auto;
+    width: 1280px;
+}
+header{
+position: fixed;
+z-index: 3;
+width: 1515px;
+height: 130px;
+top: 0;
+
+background: #FFFFFF;
+}
+.logo{
+    position: relative;
+    width: 118px;
+    height: 70px;
+    left: 52px;
+    top: 32px;
+    font-family: 'Ubuntu Mono';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 70px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #000000;
+}
+.search{
+    position: absolute;
+    width: 300px;
+    height: 30px;
+    left: 221px;
+    top: 36px;
+    background: #C2C2C2;
+    border-radius: 20px;
+}
+.input-search-1{
+    width: 300px;
+    height: 61px;
+    left: 242px;
+    top: 36px;
+    border:none;
+    border-radius: 12px;
+    margin-right: 21px;
+    background-color: #C2C2C2;
+    font-family: 'Ubuntu Mono';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 37px;
+    line-height: 70px;
+    color: rgba(0, 0, 0, 0.6);
+}
+.button-img{
+    border: none;
+    background-color:transparent;
+    position: absolute;
+    top: 9px;
+    right: 10px;
+    cursor: pointer;
+}
+.form-input{
+    position: relative;
+    margin-bottom: 47px;
+}
+.text1{
+    position: absolute;
+    width: 199px;
+    height: 74px;
+    left: 331px;
+    top: 32px;
+    font-family: 'Ubuntu Mono';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 33px;
+    line-height: 70px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #000000;
+    text-decoration: none;
+}
+.text2{
+    position: absolute;
+    width: 209px;
+    height: 74px;
+    left: 463px;
+    top: 32px;
+    font-family: 'Ubuntu Mono';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 33px;
+    line-height: 70px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #000000;
+    text-decoration: none;
+}
+.text3{
+    position: absolute;
+    width: 160px;
+    height: 69.04px;
+    left: 624px;
+    top: 35px;
+    font-family: 'Ubuntu Mono';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 33px;
+    line-height: 70px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #000000;
+    text-decoration: none;
+}
+.text4{
+    position: absolute;
+    width: 248px;
+    height: 70px;
+    left: 713px;
+    top: 35px;
+    font-family: 'Ubuntu Mono';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 33px;
+    line-height: 70px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #000000;
+    text-decoration: none;
+}
+.text5{
+    position: absolute;
+    width: 160px;
+    height: 67px;
+    left: 932px;
+    top: 36px;
+    font-family: 'Ubuntu Mono';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 33px;
+    line-height: 70px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #000000;
+    text-decoration: none;
+}
+.around{
+    position: absolute;
+    width: 43px;
+    height: 43px;
+    left: 1200px;
+    top: 50px;
+}
+.profile{
+    box-sizing: border-box;
+    position: absolute;
+    width: 103px;
+    height: 103px;
+    left: 1270px;
+    top: 14px;
+    border-radius: 100px;
+    background: #FFFCFC;
+}
+.arrow{
+    position: absolute;
+    width: 43px;
+    height: 23.19px;
+    left: 1405px;
+    top: 56px;
+}
+.post-logo{
+    position: absolute;
+    width: 1515px;
+    height: 175px;
+    top: 60px;
+    background: rgba(0, 0, 0, 0.66);
+}
+.post-logo-img{
+    position: absolute;
+    width: 1515px;
+    height: 175px;
+
+    background: rgba(0, 0, 0, 0.66);
+}
+.post-logo img{
+    filter: brightness(40%);
+}
+.post-logo-text {
+    position: absolute;
+    width: 1225px;
+    height: 275px;
+    left: 400px;
+    top: -120px;
+    font-family: 'Ubuntu Mono';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 69px;
+    line-height: 70px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #FFFFFF;
+}
+.menu {
+    position: fixed;
+    top: 138px;
+    left: 1380px;
+    height: 20%;
+    width: 50%;
+    max-width: 110px;
+    z-index: 1;
+    background-color: rgb(122, 122, 122);
+    padding-top: 10px;
+    transition: .5s;
+    cursor: pointer;
+    overflow-x: hidden;
+}
+.menu a {
+    padding: 15px 25px;
+    text-decoration: none;
+    font-size: 20px;
+    color: black;
+    display: block;
+    transition: .3s;
+}
+.menu a:hover {
+    color: orangered;
+}
+.menu .close {
+    font-size: 15px;
+    text-align: right;
+}
+span {
+    cursor: pointer;
+    font-size: 25px;
+}
+.background{
+    position: absolute;
+    top: 295px;
+    width: 1515px;
+    height: 900px;
+    background-color: #C2C2C2;
+}
+.b-btn{
+    position: absolute;
+    width: 274px;
+    height: 40px;
+    left: 65px;
+    top: 347px;
+    font-family: 'Ubuntu Mono';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 50px;
+    align-items: center;
+    text-align: center;
+    color: #FFFFFF;
+    background: #000000;
+    border-radius: 12px;
+}
+.w-btn1{
+    position: absolute;
+    width: 191px;
+    height: 40px;
+    left: 105px;
+    top: 405px;
+    font-family: 'Ubuntu Mono';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 50px;
+    align-items: center;
+    text-align: center;
+    color: #000000;
+    background: #ffffff;
+    border-radius: 12px;
+    border-color: #FFFFFF;
+}
+.w-btn2{
+    position: absolute;
+    width: 191px;
+    height: 40px;
+    left: 105px;
+    top: 447px;
+    font-family: 'Ubuntu Mono';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 50px;
+    align-items: center;
+    text-align: center;
+    color: #000000;
+    background: #ffffff;
+    border-radius: 12px;
+    border-color: #FFFFFF;
+}
+.w-btn3{
+    position: absolute;
+    width: 191px;
+    height: 40px;
+    left: 105px;
+    top: 489px;
+    font-family: 'Ubuntu Mono';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 50px;
+    align-items: center;
+    text-align: center;
+    color: #000000;
+    background: #ffffff;
+    border-radius: 12px;
+    border-color: #FFFFFF;
+}
+.w-btn4{
+    position: absolute;
+    width: 191px;
+    height: 40px;
+    left: 105px;
+    top: 532px;
+    font-family: 'Ubuntu Mono';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 50px;
+    align-items: center;
+    text-align: center;
+    color: #000000;
+    background: #ffffff;
+    border-radius: 12px;
+    border-color: #FFFFFF;
+}
+.block{
+    position: absolute;
+    width: 1080px;
+    height: 847px;
+    left: 395px;
+    top: 347px;
+    border-radius: 20px;
+    background-color: #d6d4d4;
+}
+.chat-block{
+    position: relative;
+    width: 820px;
+    height: 45px;
+    left: 554px;
+    top: 373px;
+    border-radius: 10px;
+    background-color: #c5c4c4;
+    font-family: 'Ubuntu Mono';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 50px;
+    color: #5a5a5a;
+    background: #BBBBBB;
+    border-radius: 12px;
+    border-color: #BBBBBB;
+}
+.chat-ava{
+    position: absolute;
+    width: 85px;
+    height: 85px;
+   left: 440px;
+    top: 370px;
+    border-radius: 50px;
+    background-color: #eeeeee;
+    border:2px ;
+    border-color: #afafaf;
+}
+.chat-block1{
+    position: relative;
+    width: 820px;
+    height: 45px;
+    left: 554px;
+    top: 379px;
+    border-radius: 10px;
+    background-color: #c5c4c4;
+    font-family: 'Ubuntu Mono';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 50px;
+    color: #5a5a5a;
+    background: #BBBBBB;
+    border-radius: 12px;
+    border-color: #BBBBBB;
+}
+.chat-block11{
+    position: relative;
+    width: 820px;
+    height: 45px;
+    left: 0px;
+    top: 0px;
+    border-radius: 10px;
+    background-color: #c5c4c4;
+    font-family: 'Ubuntu Mono';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 50px;
+    color: #5a5a5a;
+    background: #BBBBBB;
+    border-radius: 12px;
+    border-color: #BBBBBB;
+}
+.chat-block2{
+    position: relative;
+    width: 820px;
+    height: 580px;
+    left: 554px;
+    top: 386px;
+    border-radius: 10px;
+    background-color: #c5c4c4;
+    font-family: 'Ubuntu Mono';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 50px;
+    color: #5a5a5a;
+    background: #BBBBBB;
+    border-radius: 12px;
+    border-color: #BBBBBB;
+}
+.chat-block22{
+    position: relative;
+    width: 820px;
+    height: 580px;
+    left: 0px;
+    top: 0px;
+    border-radius: 10px;
+    padding-top: 0px;
+    background-color: #c5c4c4;
+    font-family: 'Ubuntu Mono';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 50px;
+    color: #5a5a5a;
+    background: #BBBBBB;
+    border-radius: 12px;
+    border-color: #BBBBBB;
+}
+.bitn{
+    position: absolute;
+    width: 227px;
+    height: 40px;
+    left: 554px;
+    top: 1085px;
+    font-family: 'Ubuntu Mono';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 50px;
+    align-items: center;
+    text-align: center;
+    color: #FFFFFF;
+    background: #000000;
+    border-radius: 12px;
+}
+.batn{
+    position: absolute;
+    width: 227px;
+    height: 40px;
+    left: 1148px;
+    top: 1085px;
+    font-family: 'Ubuntu Mono';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 50px;
+    align-items: center;
+    text-align: center;
+    color: #363636;
+    background: #BBBBBB;
+    border-radius: 12px;
+}

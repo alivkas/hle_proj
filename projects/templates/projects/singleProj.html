@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'styles/projectPage.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap" rel="stylesheet">
+    <title>Project Page</title>
+</head>
+<body>
+    <header>
+        <a href="{% url 'projects' %}" class="logo">FOLIo</a>
+            {% if request.user.is_authenticated %}
+                <a href="" class="text1">Для вас</a>
+                <a href="" class="text2">Подписки</a>
+                <a href="{% url 'inbox' %}" class="text3">Чаты</a>
+                <a href="" class="text4">Вы сохранили</a>
+                <a href="" class="text5">О нас</a>
+                <img class="around" src="{% static 'img/Ellipse 4.png' %}" alt="around">
+                    <img class="profile" src="{{ profile.image.url }}" alt="profile">
+                <nav class="menu" id="menu">
+                    <a class="close" href="javascript:void(0)" onclick="closeMenu()">&#10006;</a>
+                    <a href="{% url 'account' %}">Профиль</a>
+                    <a href="{% url 'logout' %}">Выход</a>
+                </nav>
+                <span onclick="openMenu()"><img class="arrow" src="{% static 'img/стрелка.png' %}" alt="arrow"></span>
+                <script src="{% static 'js/mainPage.js' %}"></script>
+            {% else %}
+                   <a href="{% url 'login' %}" class="text4">Войти</a>
+                    <a href="{% url 'register' %}" class="text5">Зарегистрироваться</a>
+            {% endif %}
+    </header>
+        <container>
+            <div class="post-logo">
+                <img class="post-logo-img" src="{% static 'img/изображение 10.png' %}" alt="post-logo-img">
+            </div>
+        </container>
+
+    <container>
+        <div class="avatar">
+            <img class="avatarr" src="{{ project.owner.image.url }}" alt="profile">
+        </div>
+        <p class="nickname">{{ project.owner.name }}</p>
+        <h1 class="post-name">{{ project.title }}</h1>
+        <img class="img-block" src="{{ project.image.url }}">
+        <div class="text-block">{{ project.description }}</div>
+        {% for tag in project.tags.all %}
+            <div class="tegss">{{ tag }}</div>
+        {% endfor %}
+        <div class="slk">
+            <a class="singleProject__liveLink" href="{{ project.source_link }}" target="_blank"><i
+                        class="im im-external-link"></i>Исходный код на GitHub
+            </a>
+        </div>
+        <div class="block-comments">Комментарии</div>
+
+        <div class="comment">
+            <div class="comments">
+                {% for review in project.review_set.all %}
+
+                <div class="chat">
+                    <p class="chatt">{{ review.body }}</p>
+                </div>
+                <div class="avatar-chat">
+                    <a href="{% url 'user-profile' review.owner  %}">
+                        <img class="avatar-chatt" src="{{ review.owner.image.url }}" alt="user" />
+                    </a>
+                </div>
+
+                {% endfor %}
+            </div>
+
+            <div class="dialog-block">
+                {% if request.user.profile.id in project.reviewers %}
+                    <p>Вы уже писали отзыв об этом проекте</p>
+
+                {% elif request.user.profile == project.owner %}
+                    <p>Вы не можете оставлять отзывы к собственным проектам</p>
+
+                {% elif request.user.is_authenticated %}
+                    <form class="form" action="{% url 'project' project.slug %}" method="POST">
+                        {% csrf_token %}
+
+                            <input class="dialog-blockk" id="id_body" type="text" name="body"
+                                    placeholder="Написать комментарий..."/>
+
+                        <button class="save" type="submit">Добавить отзыв</button>
+                    </form>
+
+                {% else %}
+                    <a href="{% url 'login' %}?next={{ request.path }}">Войдите, чтобы оставить отзыв</a>
+                {% endif %}
+            </div>
+        </div>
+
+    </container>
+</body>
+</html>

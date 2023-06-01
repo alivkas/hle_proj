@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'styles/account.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap" rel="stylesheet">
+    <title>Profile</title>
+</head>
+<body>
+    <header>
+        <a href="{% url 'projects' %}" class="logo">FOLIo</a>
+        <div class="search">
+            <div class="form-input">
+                <form id='searchForm' action="{% url 'projects' %}" class="form-search" method="get">
+                   <input type="text" class="input-search-1" placeholder="Поиск" id="formInput#search" name="search_query"
+                   value="{{ search_query }}">
+                   <button class="button-img">
+                    <img src="{% static 'img/пупа.png' %}" alt="search" >
+                   </button>
+            <a href="" class="text1">Для вас</a>
+            <a href="" class="text2">Подписки</a>
+            <a href="{% url 'inbox' %}" class="text3">Чаты</a>
+            <a href="" class="text4">Вы сохранили</a>
+            <a href="" class="text5">О нас</a>
+            <img class="around" src="{% static 'img/Ellipse 4.png' %}" alt="around">
+                <img class="profile" src="{{ profile.image.url }}" alt="profile">
+            <nav class="menu" id="menu">
+                <a class="close" href="javascript:void(0)" onclick="closeMenu()">&#10006;</a>
+                <a href="{% url 'account' %}">Профиль</a>
+                <a href="{% url 'logout' %}">Выход</a>
+            </nav>
+            <span onclick="openMenu()"><img class="arrow" src="{% static 'img/стрелка.png' %}" alt="arrow"></span>
+            <script src="{% static 'js/mainPage.js' %}"></script>
+    </header>
+        <container>
+            <div class="post-logo">
+                <img class="post-logo-img" src="{% static 'img/изображение 10.png' %}" alt="post-logo-img">
+            </div>
+        </container>
+        <container>
+        {% if projects.count != 0 %}
+            {% for project in projects %}
+                <div class="block-prof">
+                    <div class="news">
+                        <div class="polzavatel">
+                            <img class="polzavatelll" src="{{ profile.image.url }}" />
+                            <a href="" class="polz-nickname">{{ profile.name }}</a>
+                        </div>
+                        <a href="{% url 'project' project.slug %}"><img class="img-post" src="{{ project.image.url }}" alt="скриншот проекта" /></a>
+                        <a class="comment" href="{% url 'project' project.slug %}">{{project.title}}</a>
+                        {% for tag in project.tags.all %}
+                            <div class="tegs">{{ tag }}</div>
+                        {% endfor %}
+                        <div class="post-menu">
+                            <span class="label">
+                                <img class="menu-btn" src="{% static 'img/3точки.png' %}">
+                            </span>
+                            <div class="line"></div>
+                            <ul class="list">
+                                <a class="tag tag--pill tag--main settings__btn" href="{% url 'update-project' project.id %}"><i
+                  class="im im-edit"></i> Редактировать</a>
+                                <a class="tag tag--pill tag--main settings__btn"
+                href="{% url 'delete-project'  project.id %}?next=/account"><i class="im im-x-mark-circle-o"></i>
+                Удалить</a>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            <div class="avatar">
+                <img class="avatarrr" src="{{ profile.image.url }}" />
+            <a href="{% url 'account' %}" class="nickname">{{ profile.name }}</a>
+            <a class="karandash" href="{% url 'edit-account' %}">
+                <img src="{% static 'img/карандаш.png' %}" alt="karandash">
+            </a>
+            </div>
+            <a class="add" href="{% url 'create-project' %}">
+                Опубликуйте что-то новое
+            </a>
+            <div class="zametki">
+                <p class="zametki-text"><br>{{ profile.intro }}
+                   <p class="zametki-achizment">{{ profile.bio }}</p>
+                </p>
+            </div>
+                <a class="vk" title="GitHub" href="{{ profile.github }}" target="_blank"><i class="im im-github">
+                    <img src="{% static 'img/изображение 13.png' %}">
+                </a>
+                <a class="tg" title="Telegram" href="{{ profile.twitter }}" target="_blank">
+                    <img src="{% static 'img/изображение 12.png' %}">
+                </a>
+                <a class="ds" title="Discord" href="{{ profile.linkedin }}" target="_blank">
+                    <img src="{% static 'img/изображение 11.png' %}">
+                </a>
+                <div class="friends">Друзья</div>
+            {% endfor %}
+        {% else %}
+            <div class="block-prof"></div>
+            <div class="avatar">
+                <img class="avatarrr" src="{{ profile.image.url }}" />
+            <a href="{% url 'account' %}" class="nickname">{{ profile.name }}</a>
+            <a class="karandash" href="{% url 'edit-account' %}">
+                <img src="{% static 'img/карандаш.png' %}" alt="karandash">
+            </a>
+            </div>
+            <a class="add" href="{% url 'create-project' %}">
+                Опубликуйте что-то новое
+            </a>
+            <div class="zametki">
+                <p class="zametki-text"><br>{{ profile.intro }}
+                   <p class="zametki-achizment">{{ profile.bio }}</p>
+                </p>
+            </div>
+                    <button class="vk">
+                        <img src="{% static 'img/изображение 13.png' %}">
+                    </button>
+                    <button class="tg">
+                        <img src="{% static 'img/изображение 12.png' %}">
+                    </button>
+                    <button class="ds">
+                        <img src="{% static 'img/изображение 11.png' %}">
+                    </button>
+                <div class="friends">Друзья</div>
+        {% endif %}
+        </container>
+</body>
+</html>

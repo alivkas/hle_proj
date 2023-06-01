@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'styles/reg.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap" rel="stylesheet">
+    <title>Registration</title>
+</head>
+<body>
+    <div class="notebook"><img src="{% static 'img/ноутбук.png' %}" alt=""></div>
+    <div class="screen"><img src="{% static 'img/главэкран.png' %}" alt=""></div>
+    <section>
+        <div class="login"></div>
+        <div class="text">Регистрация</div>
+
+        <form action="{% url 'register' %}" method="POST">
+            {% csrf_token %}
+
+            <div class="log1">
+                <label for="formInput#text"></label>
+                <input class="p1" id="formInput#text" type="text" name="email"
+                    placeholder="Почта" />
+            </div>
+            <div class="log2">
+                <label for="formInput#text"></label>
+                <input class="p2" id="formInput#text" type="text" name="username"
+                    placeholder="Логин" />
+            </div>
+            <div class="log3">
+                <label for="formInput#text"></label>
+                <input class="p3" id="formInput#text" type="password" name="password1"
+                    placeholder="Пароль" />
+            </div>
+            <div class="log4">
+                <label for="formInput#text"></label>
+                <input class="p4" id="formInput#text" type="password" name="password2"
+                    placeholder="Повторите пароль" />
+            </div>
+
+            <button class="button" type="submit">Зарегистрироваться</button>
+        </form>
+    </section>
+</body>
+</html>

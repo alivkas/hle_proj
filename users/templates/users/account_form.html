@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'styles/editAcc.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap" rel="stylesheet">
+    <title>Edit Profile</title>
+</head>
+<body>
+    <header>
+        <a href="{% url 'projects' %}" class="logo">FOLIo</a>
+            <a href="" class="text1">Для вас</a>
+            <a href="" class="text2">Подписки</a>
+            <a href="{% url 'inbox' %}" class="text3">Чаты</a>
+            <a href="" class="text4">Вы сохранили</a>
+            <a href="" class="text5">О нас</a>
+            <img class="around" src="{% static 'img/Ellipse 4.png' %}" alt="around">
+                <img class="profile" src="{{ profile.image.url }}" alt="profile">
+            <nav class="menu" id="menu">
+                <a class="close" href="javascript:void(0)" onclick="closeMenu()">&#10006;</a>
+                <a href="{% url 'account' %}">Профиль</a>
+                <a href="{% url 'logout' %}">Выход</a>
+            </nav>
+            <span onclick="openMenu()"><img class="arrow" src="{% static 'img/стрелка.png' %}" alt="arrow"></span>
+            <script src="{% static 'js/mainPage.js' %}"></script>
+    </header>
+        <container>
+            <div class="post-logo">
+                <img class="post-logo-img" src="{% static 'img/изображение 10.png' %}" alt="post-logo-img">
+            </div>
+        </container>
+        <container>
+            <div class="block-prof">
+                <form class="form" method="POST" action="{% url 'edit-account' %}" enctype="multipart/form-data">
+                    {% csrf_token %}
+
+                    <div class="avatar">
+                        <img class="avatar-img" src="{{ profile.image.url }}">
+                        <input class="input__file" type="file" name="image" accept="image/*" multiple>
+                    </div>
+
+                    <div class="nickname">{{ profile.name }}</div>
+
+                    <div class="name">
+                        <label for="formInput#text"></label>
+                        <input class="namee" id="id_name" type="text" name="name"
+                            placeholder="Имя" value="{{ profile.name }}" />
+                    </div>
+
+                    <div class="town">
+                        <label for="formInput#text"></label>
+                        <input class="townn" id="id_city" type="text" name="city"
+                            placeholder="Город" />
+                    </div>
+
+                    <div class="opisanie">
+                        <label for="formInput#text"></label>
+                        <input class="opisaniee" id="id_bio" type="text" name="bio"
+                            placeholder="Описание" value="{{ profile.bio }}" />
+                    </div>
+
+                    <div class="vdohnovenie">
+                        <label for="formInput#text"></label>
+                        <input class="vdohnoveniee" id="id_intro" type="text" name="intro"
+                            placeholder="Вдохновляет" value="{{ profile.intro }}" />
+                    </div>
+
+                    <div class="achizment">
+                        <input class="achizmentt" id="id_username" type="text" name="username"
+                           placeholder="Логин" value="{{ profile.username }}" />
+                    </div>
+
+                    <div class="github">
+                        <label for="formInput#text"></label>
+                        <input class="githubb" id="id_github" type="text" name="github"
+                            placeholder="Ваш GitHub" value="{{ profile.github }}" />
+                    </div>
+
+                    <div class="tg">
+                        <label for="formInput#text"></label>
+                        <input class="tgg" id="id_twitter" type="text" name="twitter"
+                            placeholder="Telegram" value="{{ profile.twitter }}" />
+                    </div>
+
+                    <div class="ds">
+                        <label for="formInput#text"></label>
+                        <input class="dss" id="if_linkedin" type="text" name="linkedin"
+                            placeholder="Discord" value="{{ profile.linkedin }}" />
+                    </div>
+
+                    <div class="email">
+                        <label for="formInput#text"></label>
+                        <input class="emaill" id="id_email" type="email" name="email"
+                            placeholder="Почта" value="{{ profile.email }}"/>
+                    </div>
+
+                    <div class="password">
+                        <label for="formInput#text"></label>
+                        <input class="passwordd" id="formInput#text" type="password" name="password1"
+                            placeholder="Введите пароль" />
+                    </div>
+
+                    <div class="repeat">
+                        <label for="formInput#text"></label>
+                        <input class="repeatt" id="formInput#text" type="password" name="password2"
+                            placeholder="Повторите пароль" />
+                    </div>
+
+                    <button class="save" type="submit">Сохранить</button>
+                </form>
+            </div>
+        </container>
+</body>
+</html>

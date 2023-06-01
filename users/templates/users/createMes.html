@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'styles/createMessage.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap" rel="stylesheet">
+    <title>Inbox</title>
+</head>
+<body>
+    <header>
+        <a href="{% url 'projects' %}" class="logo">FOLIo</a>
+            <a href="" class="text1">Для вас</a>
+            <a href="" class="text2">Подписки</a>
+            <a href="{% url 'inbox' %}" class="text3">Чаты</a>
+            <a href="" class="text4">Вы сохранили</a>
+            <a href="" class="text5">О нас</a>
+            <img class="around" src="{% static 'img/Ellipse 4.png' %}" alt="around">
+                <img class="profile" src="{{ profile.image.url }}" alt="profile">
+            <nav class="menu" id="menu">
+                <a class="close" href="javascript:void(0)" onclick="closeMenu()">&#10006;</a>
+                <a href="{% url 'account' %}">Профиль</a>
+                <a href="{% url 'logout' %}">Выход</a>
+            </nav>
+            <span onclick="openMenu()"><img class="arrow" src="{% static 'img/стрелка.png' %}" alt="arrow"></span>
+            <script src="{% static 'js/mainPage.js' %}"></script>
+    </header>
+        <container>
+            <div class="post-logo">
+                <div class="post-logo">
+                    <img class="post-logo-img" src="{% static 'img/изображение 10.png' %}" alt="post-logo-img">
+                    <p class="post-logo-text">Общайся вместе с FOLIo</p>
+                </div>
+            </div>
+        </container>
+        <container>
+            <div class="background"></div>
+            <button class="b-btn" href="">Написать сообщение</button>
+            <button class="w-btn1" href="">Новые(<span>{{unreadCount}}</span>)</button>
+            <button class="w-btn2" href="">Все входящие</button>
+            <button class="w-btn3" href="">Избранные</button>
+            <button class="w-btn4" href="">Отправленные</button>
+            <div class="block"></div>
+
+        </container>
+
+        <img class="chat-ava" src="{{ profile.image.url }}" alt="profile">
+
+        <form class="form" method="POST">
+                {% csrf_token %}
+
+                {% if request.user.is_authenticated == False %}
+                <div class="form__field">
+                    <label for="formInput#text">{{ form.name.label }}</label>
+                    {{ form.name }}
+                </div>
+
+                <div class="form__field">
+                    <label for="formInput#text">{{ form.email.label }}</label>
+                    {{ form.email }}
+                </div>
+                {% endif %}
+
+                <div class="chat-block1">
+                    <input class="chat-block11" id="id_subject" type="text" name="subject"
+                                placeholder="Тема..."/>
+                </div>
+
+                <div class="chat-block2">
+                    <input class="chat-block22" id="id_body" type="text" name="body"
+                                placeholder="Описание..."/>
+                </div>
+
+                <input class="bitn" type="submit" value="Отправить" />
+        </form>
+
+</body>
+</html>

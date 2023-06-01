@@ -1,0 +1,707 @@
+body{
+    position: relative;
+    height: auto;
+    width: 1280px;
+}
+header{
+position: fixed;
+z-index: 3;
+width: 1515px;
+height: 130px;
+top: 0;
+
+background: #FFFFFF;
+}
+.logo{
+    position: relative;
+    width: 118px;
+    height: 70px;
+    left: 52px;
+    top: 32px;
+    font-family: 'Ubuntu Mono';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 70px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #000000;
+}
+.search{
+    position: absolute;
+    width: 300px;
+    height: 30px;
+    left: 221px;
+    top: 36px;
+    background: #C2C2C2;
+    border-radius: 20px;
+}
+.input-search-1{
+    width: 300px;
+    height: 61px;
+    left: 242px;
+    top: 36px;
+    border:none;
+    border-radius: 12px;
+    margin-right: 21px;
+    background-color: #C2C2C2;
+    font-family: 'Ubuntu Mono';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 37px;
+    line-height: 70px;
+    color: rgba(0, 0, 0, 0.6);
+}
+.button-img{
+    border: none;
+    background-color:transparent;
+    position: absolute;
+    top: 9px;
+    right: 10px;
+    cursor: pointer;
+}
+.form-input{
+    position: relative;
+    margin-bottom: 47px;
+}
+.text1{
+    position: absolute;
+    width: 199px;
+    height: 74px;
+    left: 331px;
+    top: 32px;
+    font-family: 'Ubuntu Mono';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 33px;
+    line-height: 70px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #000000;
+    text-decoration: none;
+}
+.text2{
+    position: absolute;
+    width: 209px;
+    height: 74px;
+    left: 463px;
+    top: 32px;
+    font-family: 'Ubuntu Mono';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 33px;
+    line-height: 70px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #000000;
+    text-decoration: none;
+}
+.text3{
+    position: absolute;
+    width: 160px;
+    height: 69.04px;
+    left: 624px;
+    top: 35px;
+    font-family: 'Ubuntu Mono';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 33px;
+    line-height: 70px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #000000;
+    text-decoration: none;
+}
+.text4{
+    position: absolute;
+    width: 248px;
+    height: 70px;
+    left: 713px;
+    top: 35px;
+    font-family: 'Ubuntu Mono';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 33px;
+    line-height: 70px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #000000;
+    text-decoration: none;
+}
+.text5{
+    position: absolute;
+    width: 160px;
+    height: 67px;
+    left: 932px;
+    top: 36px;
+    font-family: 'Ubuntu Mono';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 33px;
+    line-height: 70px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #000000;
+    text-decoration: none;
+}
+.around{
+    position: absolute;
+    width: 43px;
+    height: 43px;
+    left: 1200px;
+    top: 50px;
+}
+.profile{
+    box-sizing: border-box;
+    position: absolute;
+    width: 103px;
+    height: 103px;
+    left: 1270px;
+    top: 14px;
+    border-radius: 100px;
+    background: #FFFCFC;
+}
+.arrow{
+    position: absolute;
+    width: 43px;
+    height: 23.19px;
+    left: 1405px;
+    top: 56px;
+}
+.post-logo{
+    position: absolute;
+    width: 1515px;
+    height: 140px;
+    top: 130px;
+    left: -2px;
+    background: rgba(0, 0, 0, 0.66);
+}
+.post-logo-img{
+    position: absolute;
+    width: 1515px;
+    height: 140px;
+    left: -2px;
+
+    background: rgba(0, 0, 0, 0.66);
+}
+.post-logo img{
+    filter: brightness(40%);
+}
+.block-prof {
+    position: absolute;
+    width: 1395px;
+    height: 1104px;
+    left: 56px;
+    top: 353px;
+    background: #C2C2C2;
+}
+.menu {
+    position: fixed;
+    top: 138px;
+    left: 1380px;
+    height: 20%;
+    width: 50%;
+    max-width: 110px;
+    z-index: 1;
+    background-color: rgb(122, 122, 122);
+    padding-top: 10px;
+    transition: .5s;
+    cursor: pointer;
+    overflow-x: hidden;
+}
+.menu a {
+    padding: 15px 25px;
+    text-decoration: none;
+    font-size: 20px;
+    color: black;
+    display: block;
+    transition: .3s;
+}
+.menu a:hover {
+    color: orangered;
+}
+.menu .close {
+    font-size: 15px;
+    text-align: right;
+}
+span {
+    cursor: pointer;
+    font-size: 25px;
+}
+.avatar {
+    box-sizing: border-box;
+    position: absolute;
+    width: 255.43px;
+    height: 255px;
+    left: 40px;
+    top: -60px;
+    background: #FFFCFC;
+    border: 5px solid #C2C2C2;
+    border-radius: 140px;
+}
+.avatar-img {
+box-sizing: border-box;
+    position: absolute;
+    width: 255.43px;
+    height: 255px;
+    left: -5px;
+    top: -4px;
+    background: #FFFCFC;
+    border: 5px solid #C2C2C2;
+    border-radius: 140px;
+}
+.nickname {
+    position: absolute;
+    width: 527px;
+    height: 54px;
+    left: 320px;
+    top: 20px;
+    font-family: 'Ubuntu Mono';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 50px;
+    line-height: 23px;
+    display: flex;
+    align-items: center;
+    color: #000000;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    text-decoration: none;
+}
+.name {
+   position: absolute;
+    width: 400px;
+    height: 60px;
+    left: 320px;
+    top: 100px;
+    background: #D9D9D9;
+    border-radius: 5px;
+    font-style: normal;
+font-weight: 400;
+font-size: 25px;
+line-height: 70px;
+
+display: flex;
+text-indent: 35%;
+text-align: center;
+align-items: center;
+
+
+color: rgba(0, 0, 0, 0.6);
+}
+.namee {
+   position: absolute;
+    width: 400px;
+    height: 60px;
+    left: 0px;
+    top: 0px;
+    background: #D9D9D9;
+    border-radius: 5px;
+    font-style: normal;
+font-weight: 400;
+font-size: 25px;
+line-height: 70px;
+
+color: rgba(0, 0, 0, 0.6);
+}
+.town {
+    position: absolute;
+    width: 400px;
+    height: 60px;
+    left: 752px;
+    top: 100px;
+    background: #D9D9D9;
+    border-radius: 5px;
+    font-style: normal;
+font-weight: 400;
+font-size: 25px;
+line-height: 70px;
+
+display: flex;
+text-indent: 35%;
+text-align: center;
+align-items: center;
+
+
+color: rgba(0, 0, 0, 0.6);
+}
+.townn {
+    position: absolute;
+    width: 400px;
+    height: 60px;
+    left: 0px;
+    top: 0px;
+    background: #D9D9D9;
+    border-radius: 5px;
+    font-style: normal;
+font-weight: 400;
+font-size: 25px;
+line-height: 70px;
+
+color: rgba(0, 0, 0, 0.6);
+}
+.opisanie {
+    position: absolute;
+    width: 833px;
+    height: 60px;
+    left: 320px;
+    top: 200px;
+    background: #D9D9D9;
+    border-radius: 5px;
+    font-style: normal;
+font-weight: 400;
+font-size: 25px;
+line-height: 70px;
+
+display: flex;
+text-indent: 15%;
+text-align: center;
+align-items: center;
+
+
+color: rgba(0, 0, 0, 0.6);
+}
+.opisaniee {
+    position: absolute;
+    width: 833px;
+    height: 60px;
+    left: 0px;
+    top: 0px;
+    background: #D9D9D9;
+    border-radius: 5px;
+    font-style: normal;
+font-weight: 400;
+font-size: 25px;
+line-height: 70px;
+
+color: rgba(0, 0, 0, 0.6);
+}
+.vdohnovenie {
+
+     position: absolute;
+    width: 833px;
+    height: 60px;
+    left: 320px;
+    top: 300px;
+    background: #D9D9D9;
+    border-radius: 5px;
+    font-style: normal;
+font-weight: 400;
+font-size: 25px;
+line-height: 70px;
+
+display: flex;
+text-indent: 15%;
+text-align: center;
+align-items: center;
+
+
+color: rgba(0, 0, 0, 0.6);
+}
+.vdohnoveniee {
+
+     position: absolute;
+    width: 833px;
+    height: 60px;
+    left: 0px;
+    top: 0px;
+    background: #D9D9D9;
+    border-radius: 5px;
+    font-style: normal;
+font-weight: 400;
+font-size: 25px;
+line-height: 70px;
+
+color: rgba(0, 0, 0, 0.6);
+}
+.achizment {
+     position: absolute;
+    width: 833px;
+    height: 60px;
+    left: 320px;
+    top: 400px;
+    background: #D9D9D9;
+    border-radius: 5px;
+    font-style: normal;
+font-weight: 400;
+text-indent: 15%;
+font-size: 25px;
+line-height: 70px;
+
+display: flex;
+
+display: flex;
+text-indent: 15%;
+text-align: center;
+align-items: center;
+
+color: rgba(0, 0, 0, 0.6);
+}
+.achizmentt {
+     position: absolute;
+    width: 833px;
+    height: 60px;
+    left: 0px;
+    top: 0px;
+    background: #D9D9D9;
+    border-radius: 5px;
+    font-style: normal;
+font-weight: 400;
+text-indent: 15%;
+font-size: 25px;
+line-height: 70px;
+
+
+color: rgba(0, 0, 0, 0.6);
+}
+.github {
+     position: absolute;
+    width: 833px;
+    height: 60px;
+    left: 320px;
+    top: 500px;
+    background: #D9D9D9;
+    border-radius: 5px;
+    font-style: normal;
+font-weight: 400;
+font-size: 25px;
+line-height: 70px;
+
+display: flex;
+text-align: center;
+align-items: center;
+
+
+color: rgba(0, 0, 0, 0.6);
+}
+.githubb {
+     position: absolute;
+    width: 833px;
+    height: 60px;
+    left: 0px;
+    top: 0px;
+    background: #D9D9D9;
+    border-radius: 5px;
+    font-style: normal;
+font-weight: 400;
+font-size: 25px;
+line-height: 70px;
+
+color: rgba(0, 0, 0, 0.6);
+}
+.tg {
+     position: absolute;
+    width: 833px;
+    height: 60px;
+    left: 320px;
+    top: 600px;
+    background: #D9D9D9;
+    border-radius: 5px;
+    font-style: normal;
+font-weight: 400;
+font-size: 25px;
+line-height: 70px;
+
+display: flex;
+text-indent: 15%;
+text-align: center;
+align-items: center;
+
+
+color: rgba(0, 0, 0, 0.6);
+}
+.tgg {
+     position: absolute;
+    width: 833px;
+    height: 60px;
+    left: 0px;
+    top: 0px;
+    background: #D9D9D9;
+    border-radius: 5px;
+    font-style: normal;
+font-weight: 400;
+font-size: 25px;
+line-height: 70px;
+
+color: rgba(0, 0, 0, 0.6);
+}
+.ds {
+     position: absolute;
+    width: 833px;
+    height: 60px;
+    left: 320px;
+    top: 700px;
+    background: #D9D9D9;
+    border-radius: 5px;
+    font-style: normal;
+font-weight: 400;
+font-size: 25px;
+line-height: 70px;
+
+display: flex;
+text-indent: 35%;
+text-align: center;
+align-items: center;
+
+
+color: rgba(0, 0, 0, 0.6);
+}
+.dss {
+     position: absolute;
+    width: 833px;
+    height: 60px;
+    left: 0px;
+    top: 0px;
+    background: #D9D9D9;
+    border-radius: 5px;
+    font-style: normal;
+font-weight: 400;
+font-size: 25px;
+line-height: 70px;
+
+color: rgba(0, 0, 0, 0.6);
+}
+.email {
+     position: absolute;
+    width: 833px;
+    height: 60px;
+    left: 320px;
+    top: 800px;
+    background: #D9D9D9;
+    border-radius: 5px;
+    font-style: normal;
+font-weight: 400;
+font-size: 25px;
+line-height: 70px;
+
+display: flex;
+text-indent: 35%;
+text-align: center;
+align-items: center;
+
+
+color: rgba(0, 0, 0, 0.6);
+}
+.emaill {
+     position: absolute;
+    width: 833px;
+    height: 60px;
+    left: 0px;
+    top: 0px;
+    background: #D9D9D9;
+    border-radius: 5px;
+    font-style: normal;
+font-weight: 400;
+font-size: 25px;
+line-height: 70px;
+
+color: rgba(0, 0, 0, 0.6);
+}
+.password {
+position: absolute;
+    width: 400px;
+    height: 60px;
+    left: 320px;
+    top: 900px;
+    background: #D9D9D9;
+    border-radius: 5px;
+    font-style: normal;
+font-weight: 400;
+font-size: 25px;
+line-height: 70px;
+
+display: flex;
+text-align: center;
+align-items: center;
+
+
+color: rgba(0, 0, 0, 0.6);
+}
+.passwordd {
+position: absolute;
+    width: 400px;
+    height: 60px;
+    left: 0px;
+    top: 0px;
+    background: #D9D9D9;
+    border-radius: 5px;
+    font-style: normal;
+font-weight: 400;
+font-size: 25px;
+line-height: 70px;
+
+color: rgba(0, 0, 0, 0.6);
+}
+.repeat {
+position: absolute;
+ width: 400px;
+    height: 60px;
+    left: 752px;
+    top: 900px;
+    background: #D9D9D9;
+    border-radius: 5px;
+     font-family: 'Ubuntu Mono';
+font-style: normal;
+font-weight: 400;
+font-size: 25px;
+line-height: 70px;
+
+display: flex;
+text-align: center;
+align-items: center;
+
+
+color: rgba(0, 0, 0, 0.6);
+}
+.repeatt {
+position: absolute;
+ width: 400px;
+    height: 60px;
+    left: 0px;
+    top: 0px;
+    background: #D9D9D9;
+    border-radius: 5px;
+     font-family: 'Ubuntu Mono';
+font-style: normal;
+font-weight: 400;
+font-size: 25px;
+line-height: 70px;
+
+color: rgba(0, 0, 0, 0.6);
+}
+.save {
+    position: absolute;
+ width: 175px;
+    height: 60px;
+    left: 986px;
+    top: 1000px;
+    background: #000000;
+    border-radius: 5px;
+    font-family: 'Ubuntu Mono';
+font-style: normal;
+font-weight: 400;
+font-size: 25px;
+line-height: 70px;
+
+display: flex;
+text-indent: 20%;
+text-align: center;
+align-items: center;
+
+color: #FFFFFF;
+
+}
+.input__file {
+    opacity: 0;
+    border: none;
+    position: absolute;
+    width: 115px;
+    height: 105px;
+    top: 65px;
+    left: 65px;
+}

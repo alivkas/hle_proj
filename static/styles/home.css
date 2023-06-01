@@ -1,0 +1,377 @@
+body{
+    position: relative;
+    height: auto;
+    width: 1280px;
+}
+header{
+position: fixed;
+z-index: 3;
+width: 1515px;
+height: 130px;
+top: 0;
+
+background: #FFFFFF;
+}
+.logo{
+    position: relative;
+    width: 118px;
+    height: 70px;
+    left: 52px;
+    top: 32px;
+    font-family: 'Ubuntu Mono';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 70px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #000000;
+}
+.search{
+    position: absolute;
+    width: 300px;
+    height: 30px;
+    left: 221px;
+    top: 36px;
+    background: #C2C2C2;
+    border-radius: 20px;
+}
+.input-search-1{
+    width: 300px;
+    height: 61px;
+    left: 242px;
+    top: 36px;
+    border:none;
+    border-radius: 12px;
+    margin-right: 21px;
+    background-color: #C2C2C2;
+    font-family: 'Ubuntu Mono';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 37px;
+    line-height: 70px;
+    color: rgba(0, 0, 0, 0.6);
+}
+.button-img{
+    border: none;
+    background-color:transparent;
+    position: absolute;
+    top: 9px;
+    right: 10px;
+    cursor: pointer;
+}
+.form-input{
+    position: relative;
+    margin-bottom: 47px;
+}
+.text1{
+    position: absolute;
+    width: 199px;
+    height: 74px;
+    left: 331px;
+    top: 0px;
+    font-family: 'Ubuntu Mono';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 33px;
+    line-height: 70px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #000000;
+}
+.text2{
+    position: absolute;
+    width: 209px;
+    height: 74px;
+    left: 463px;
+    top: 0px;
+    font-family: 'Ubuntu Mono';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 33px;
+    line-height: 70px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #000000;
+}
+.text3{
+    position: absolute;
+    width: 160px;
+    height: 69.04px;
+    left: 624px;
+    top: 3px;
+    font-family: 'Ubuntu Mono';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 33px;
+    line-height: 70px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #000000;
+}
+.text4{
+    position: absolute;
+    width: 248px;
+    height: 70px;
+    left: 713px;
+    top: 2px;
+    font-family: 'Ubuntu Mono';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 33px;
+    line-height: 70px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #000000;
+}
+.text5{
+    position: absolute;
+    width: 160px;
+    height: 67px;
+    left: 932px;
+    top: 4px;
+    font-family: 'Ubuntu Mono';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 33px;
+    line-height: 70px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #000000;
+}
+.around{
+    position: absolute;
+    width: 43px;
+    height: 43px;
+    left: 1039px;
+    top: 19px;
+}
+.profile{
+    box-sizing: border-box;
+    position: absolute;
+    width: 103px;
+    height: 103px;
+    left: 1107px;
+    top: -18px;
+    border-radius: 100px;
+    background: #FFFCFC;
+}
+.arrow{
+    position: absolute;
+    width: 43px;
+    height: 23.19px;
+    left: 1234px;
+    top: 23px;
+}
+.post-logo{
+    position: absolute;
+    width: 1515px;
+    height: 275px;
+    top: 130px;
+    left: -2px;
+    background: rgba(0, 0, 0, 0.66);
+}
+.post-logo-img{
+    position: absolute;
+    width: 1515px;
+    height: 275px;
+    left: -2px;
+
+    background: rgba(0, 0, 0, 0.66);
+}
+.post-logo img{
+    filter: brightness(40%);
+}
+.post-logo-text {
+    position: absolute;
+    width: 1225px;
+    height: 275px;
+    left: 250px;
+    top: -68px;
+    font-family: 'Ubuntu Mono';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 69px;
+    line-height: 70px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #FFFFFF;
+}
+.block{
+    position: relative;
+    width: 910px;
+    height: 650px;
+    left: 310px;
+    top: 405px;
+    background: #C2C2C2;
+}
+.block-panel{
+    position: relative;
+    width: 820px;
+    height: 580px;
+    left: 43px;
+    top: 43px;
+
+background: #D9D9D9;
+border-radius: 10px;
+}
+.block-inpanel{
+    position: relative;
+    width: 770px;
+    height: 305px;
+    left: 67px;
+    top: -444px;
+
+background: #212023;
+border-radius: 10px;
+}
+.avatar{
+    position: relative;
+    width: 68px;
+    height: 68px;
+    left: -705px;
+    top: -764px;
+    background: #6D6D6D;
+    border-radius: 40px;
+}
+.nickname{
+    position: relative;
+width: 255px;
+height: 31px;
+left: 155px;
+top: -832px;
+
+font-family: 'Ubuntu Mono';
+font-style: normal;
+font-weight: 400;
+font-size: 33px;
+line-height: 70px;
+
+display: flex;
+align-items: center;
+
+color: #000000;
+}
+.heart{
+    position: relative;
+width: 28px;
+height: 27px;
+left: 70px;
+top: -479px;
+
+}
+.comment{
+    position: relative;
+width: 28px;
+height: 27px;
+left: 150px;
+top: -479px;
+
+}
+.like{
+    position: relative;
+    width: 28px;
+    height: 27px;
+    left: 105px;
+    top: -534px;
+    font-family: 'Ubuntu Mono';
+font-style: normal;
+font-weight: 400;
+font-size: 25px;
+line-height: 70px;
+
+display: flex;
+align-items: center;
+
+color: #212023;
+
+}
+.comm{
+    position: relative;
+    width: 28px;
+    height: 27px;
+    left: 220px;
+    top: -586px;
+    font-family: 'Ubuntu Mono';
+font-style: normal;
+font-weight: 400;
+font-size: 25px;
+line-height: 70px;
+
+display: flex;
+align-items: center;
+
+color: #212023;
+
+}
+.menu {
+    position: fixed;
+    top: 138px;
+    left: 1380px;
+    height: 20%;
+    width: 50%;
+    max-width: 110px;
+    z-index: 1;
+    background-color: rgb(122, 122, 122);
+    padding-top: 10px;
+    transition: .5s;
+    cursor: pointer;
+    overflow-x: hidden;
+}
+.menu a {
+    padding: 15px 25px;
+    text-decoration: none;
+    font-size: 20px;
+    color: black;
+    display: block;
+    transition: .3s;
+}
+.menu a:hover {
+    color: orangered;
+}
+.menu .close {
+    font-size: 15px;
+    text-align: right;
+}
+span {
+    cursor: pointer;
+    font-size: 25px;
+}
+.tegs{
+    position: relative;
+    width: 690px;
+    height: 30px;
+    left: 50px;
+    top: -580px;
+    font-family: 'Ubuntu Mono';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 19px;
+    line-height: 30px;
+    display: flex;
+    white-space: pre-line;
+    align-items: center;
+    color: #696565;
+}
+.title{
+    position: relative;
+    width: 690px;
+    height: 30px;
+    left: 225px;
+    top: 430px;
+    font-family: 'Ubuntu Mono';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 19px;
+    line-height: 30px;
+    display: flex;
+    white-space: nowrap;
+    align-items: center;
+}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+{% load static %}
+{% block content %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'styles/login.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap" rel="stylesheet">
+    <title>Авторизация</title>
+</head>
+<body>
+
+    <div class="notebook"><img src="{% static 'img/ноутбук.png' %}" alt=""></div>
+    <div class="screen"><img src="{% static 'img/главэкран.png' %}" alt=""></div>
+
+    <section>
+        <div class="login"></div>
+        <div class="text">Вход в систему</div>
+         <form action="" method="POST">
+            {% csrf_token %}
+
+            <div class="log1">
+                <label for="formInput#text"></label>
+                <input class="p1" id="formInput#text" type="text" name="username"
+                    placeholder="Логин" />
+            </div>
+            <div class="log2">
+                <label for="formInput#password"></label>
+                  <input class="p2" id="formInput#passowrd" type="password" name="password"
+                    placeholder="Пароль" />
+            </div>
+
+            <button class="button" type="submit">Войти</button>
+         </form>
+
+            <div class="line"></div>
+            <div class="comment1">Забыли пароль?</div>
+            <div class="comment2">Нет аккаунта? <a href="{% url 'register' %}">Зарегистрироваться</a></div>
+    </section>
+
+</body>
+
+
+</html>
+
+{% endblock content %}
