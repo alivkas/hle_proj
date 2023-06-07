@@ -379,7 +379,7 @@ border-radius: 10px;
     box-sizing: border-box;
     position: absolute;
     width: 770px;
-    height: 58px;
+    min-height: 58px;
     left: 75px;
     top: 26px;
     background: #242424;
@@ -389,7 +389,7 @@ border-radius: 10px;
 .chatt {
   position: absolute;
     width: auto;
-    height: 70.5px;
+    min-height: 70.5px;
     left: 10px;
     top: -18px;
 font-family: 'Ubuntu Mono';
@@ -399,6 +399,17 @@ font-size: 25px;
 line-height: 30px;
 
 color: #ffffff;
+}
+.chattt {
+    box-sizing: border-box;
+    position: absolute;
+    width: 770px;
+    min-height: 65px;
+    left: 75px;
+    top: 26px;
+    background: #D9D9D9;
+    border: 5px solid #D9D9D9;
+    border-radius: 50px;
 }
 .dialog-block {
     position: absolute;

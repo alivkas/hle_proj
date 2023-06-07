@@ -2,7 +2,7 @@ import datetime
 import time
 
 from django.shortcuts import render, redirect, get_object_or_404
-from .models import Project, Tag, Review
+from .models import Project, Tag, Review, Like
 from .forms import ProjectForm, ReviewForm
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
@@ -17,33 +17,47 @@ def projects(request):
     if request.user.is_authenticated:
         profile = request.user.profile
 
-        context = {'projects': projects, 'search_query': search_query, 'profile': profile}
+        context = {'projects': projects, 'search_query': search_query, 'profile': profile, 'review': reviewCount}
         return render(request, 'projects/glavnaya.html', context)
 
     context = {'projects': projects, 'search_query': search_query, 'review': reviewCount}
     return render(request, 'projects/glavnaya.html', context)
 
 
+def like(request, pk):
+    obj = get_object_or_404(Project, pk=pk)
+    like, created = Like.objects.get_or_create(user=request.user, liked_object=obj)
+
+    if not created:
+        like.delete()
+
+    return redirect('projects')
+
+
 def project(request, project_slug):
     project = Project.objects.get(slug=project_slug)
     tags = project.tags.all()
     form = ReviewForm()
+    comments = project.reviewers.all()
 
     if request.user.is_authenticated:
         profile = request.user.profile
 
-        if request.method == 'POST' and form.is_valid():
-            form = ReviewForm(request.POST)
-            review = form.save(commit=False)
-            review.project = project
-            review.owner = request.user.profile
-            review.save()
-            project.getVoteCount
-            messages.success(request, 'Ваш отзыв был добавлен!')
-            return redirect('project', project_slug=project.slug)
-        return render(request, 'projects/singleProj.html', {'project': project, 'form': form, 'profile': profile})
+        if request.method == 'POST':
+            form = ReviewForm(data=request.POST)
 
-    return render(request, 'projects/singleProj.html', {'project': project, 'form': form})
+            if form.is_valid():
+                review = form.save(commit=False)
+                review.project = project
+                review.owner = request.user.profile
+                review.save()
+
+        else:
+            form = ReviewForm()
+
+        return render(request, 'projects/singleProj.html', {'project': project, 'form': form, 'profile': profile, 'comments': comments})
+
+    return render(request, 'projects/singleProj.html', {'project': project, 'form': form, 'comments': comments})
 
 
 @login_required(login_url="login")

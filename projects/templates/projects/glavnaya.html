@@ -67,7 +67,7 @@
                 <img class="heart" src="{% static 'img/Union.png' %}">
                 <img class="comment" src="{% static 'img/Group 2.png' %}">
                 <p class="like">{{ project.total_votes }}</p>
-                <p class="comm">{{ review.count }}</p>
+                <p class="comm">{{ project.reviewers.count }}</p>
                 {% for tag in project.tags.all %}
                     <div class="tegs">{{ tag }}</div>
                 {% endfor %}

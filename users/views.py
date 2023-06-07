@@ -8,6 +8,7 @@ from django.urls import conf
 from .models import Profile, Skill, Message
 from .forms import CustomUserCreationForm, ProfileForm, SkillForm, MessageForm
 from .utils import paginateProfiles, searchProfiles, searchMessage
+from django.db.models import Q
 
 
 def loginUser(request):
@@ -77,12 +78,13 @@ def profiles(request):
 
 def userProfile(request, username):
     profile = Profile.objects.get(username=username)
+    myProfile = request.user.profile
 
     main_skills = profile.skills.all()[:2]
     extra_skills = profile.skills.all()[2:]
 
     context = {'profile': profile, 'main_skills': main_skills,
-               "extra_skills": extra_skills}
+               "extra_skills": extra_skills, 'myProfile': myProfile}
     return render(request, 'users/userProfile.html', context)
 
 
@@ -175,11 +177,17 @@ def deleteSkill(request, skill_slug):
 @login_required(login_url='login')
 def inbox(request):
     profile = request.user.profile
-    messageRequests = profile.messages.all()
-    unreadCount = messageRequests.filter(is_read=False).count()
+    messageRequestss = profile.messages.all()
+    unreadCount = messageRequestss.filter(is_read=False).count()
     search_query = searchMessage(request)
     sender = request.user.profile
-    context = {'messageRequests': messageRequests, 'unreadCount': unreadCount, 'profile': profile,
+
+    message = messageRequestss.distinct().filter(
+        Q(name__icontains=search_query) |
+        Q(subject__icontains=search_query)
+    )
+
+    context = {'messageRequests': message, 'unreadCount': unreadCount, 'profile': profile,
                'sender': sender, 'search_query': search_query}
     return render(request, 'users/messages.html', context)
 
@@ -189,6 +197,7 @@ def viewMessage(request, pk):
     profile = request.user.profile
     message = profile.messages.get(id=pk)
     sender = request.user.profile
+
     if message.is_read == False:
         message.is_read = True
         message.save()

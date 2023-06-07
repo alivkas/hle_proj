@@ -60,23 +60,30 @@ class Project(models.Model):
 
 
 class Review(models.Model):
-    VOTE_TYPE = (
-        ('up', 'Положительная оценка'),
-        ('down', 'Отрицательная оценка'),
-    )
     owner = models.ForeignKey(Profile, on_delete=models.CASCADE, null=True)
     project = models.ForeignKey(Project, on_delete=models.CASCADE)
     body = models.TextField(null=True, blank=True)
-    value = models.CharField(max_length=200, choices=VOTE_TYPE)
     created = models.DateTimeField(auto_now_add=True)
     id = models.UUIDField(default=uuid.uuid4, unique=True,
                           primary_key=True, editable=False)
+    updated = models.DateTimeField(auto_now=True)
+    active = models.BooleanField(default=True)
 
     class Meta:
         unique_together = [['owner', 'project']]
+        ordering = ('created', )
 
     def __str__(self):
-        return self.value
+        return self.body
+
+
+class Like(models.Model):
+    user = models.ForeignKey(Profile, on_delete=models.CASCADE)
+    liked_object = models.ForeignKey(Project, on_delete=models.CASCADE)
+    created = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        unique_together = ('user', 'liked_object')
 
 
 

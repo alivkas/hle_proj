@@ -39,7 +39,6 @@
         </container>
         <container>
             <div class="background"></div>
-            <button class="b-btn" href="">Написать сообщение</button>
             <button class="w-btn1" href="">Новые(<span>{{unreadCount}}</span>)</button>
             <button class="w-btn2" href="">Все входящие</button>
             <button class="w-btn3" href="">Избранные</button>
@@ -49,12 +48,24 @@
 
             </div>
 
+            <div class="message-search">
+                <div class="form-input-ms">
+                    <form id='searchForm' action="{% url 'inbox' %}" class="form-search" method="get">
+                       <input type="text" class="input-search-ms" placeholder="Поиск по почте" name="search_query"
+                       value="{{ search_query }}">
+                       <button class="button-img-ms">
+                        <img src="{% static 'img/пупа.png' %}" alt="search" >
+                       </button>
+                    </form>
+                </div>
+            </div>
+
             {% for message in messageRequests %}
 
                 <div class="chat-block2">
                     <div class="chat-block">
                         <a href="{% url 'message' message.id %}">
-                            <img class="chat-ava" src="{{ sender.image.url }}" alt="profile">
+                            <img class="chat-ava" src="{{ message.sender.image.url }}" alt="profile">
                             <h1 class="nick">{{message.name}}</h1>
                             <p class="text-chat">{{message.subject}}</p>
                             <p class="time">{{message.created}}</p>
@@ -63,14 +74,6 @@
                 </div>
 
             {% endfor %}
-
-            <div class="message-search">
-                <div class="form-input-ms">
-                    <form id='searchForm' action="{% url 'inbox' %}" class="form-search" method="get">
-                       <input type="text" class="input-search-ms" placeholder="Поиск по почте" name="search_query">
-                       <button class="button-img-ms">
-                        <img src="{% static 'img/пупа.png' %}" alt="search" >
-                       </button>
 
         </container>
 </body>

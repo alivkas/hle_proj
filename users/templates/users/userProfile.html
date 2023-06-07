@@ -25,11 +25,11 @@
             {% if request.user.is_authenticated %}
                 <a href="" class="text1">Для вас</a>
                 <a href="" class="text2">Подписки</a>
-                <a href="" class="text3">Чаты</a>
+                <a href="{% url 'inbox' %}" class="text3">Чаты</a>
                 <a href="" class="text4">Вы сохранили</a>
                 <a href="" class="text5">О нас</a>
                 <img class="around" src="{% static 'img/Ellipse 4.png' %}" alt="around">
-                    <img class="profile" src="{{ profile.image.url }}" alt="profile">
+                    <img class="profile" src="{{ myProfile.image.url }}" alt="profile">
                 <nav class="menu" id="menu">
                     <a class="close" href="javascript:void(0)" onclick="closeMenu()">&#10006;</a>
                     <a href="{% url 'account' %}">Профиль</a>

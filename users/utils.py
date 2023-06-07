@@ -1,6 +1,7 @@
 from .models import Profile, Skill, Message
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from django.db.models import Q
+from django.contrib.auth.models import User
 
 
 def paginateProfiles(request, profiles, results):
@@ -45,16 +46,8 @@ def searchProfiles(request):
     return profiles, search_query
 
 def searchMessage(request):
-
     search_query = ''
-
     if request.GET.get('search_query'):
         search_query = request.GET.get('search_query')
 
-    message = Message.objects.distinct().filter(
-        Q(name__icontains=search_query) |
-        Q(subject__icontains=search_query) |
-        Q(sender__message__name__icontains=search_query) |
-        Q(sender__message__subject__icontains=search_query)
-    )
-    return message, search_query
+    return search_query

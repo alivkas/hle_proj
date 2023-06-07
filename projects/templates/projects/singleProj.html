@@ -63,19 +63,20 @@
             <div class="comments">
                 {% for review in project.review_set.all %}
 
-                <div class="chat">
-                    <p class="chatt">{{ review.body }}</p>
-                </div>
-                <div class="avatar-chat">
-                    <a href="{% url 'user-profile' review.owner  %}">
-                        <img class="avatar-chatt" src="{{ review.owner.image.url }}" alt="user" />
-                    </a>
-                </div>
+                    <div class="chat">
+                        <p class="chatt">{{ review.body }}</p>
+                    </div>
+                    <div class="avatar-chat">
+                        <a href="{% url 'user-profile' review.owner  %}">
+                            <img class="avatar-chatt" src="{{ review.owner.image.url }}" alt="user" />
+                        </a>
+                    </div>
 
                 {% endfor %}
             </div>
 
             <div class="dialog-block">
+
                 {% if request.user.profile.id in project.reviewers %}
                     <p>Вы уже писали отзыв об этом проекте</p>
 
@@ -83,7 +84,7 @@
                     <p>Вы не можете оставлять отзывы к собственным проектам</p>
 
                 {% elif request.user.is_authenticated %}
-                    <form class="form" action="{% url 'project' project.slug %}" method="POST">
+                    <form action="." method="POST">
                         {% csrf_token %}
 
                             <input class="dialog-blockk" id="id_body" type="text" name="body"

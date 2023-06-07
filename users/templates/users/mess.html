@@ -39,14 +39,13 @@
         </container>
         <container>
             <div class="background"></div>
-            <button class="b-btn" href="">Написать сообщение</button>
             <button class="w-btn1" href="">Новые</button>
             <button class="w-btn2" href="">Все входящие</button>
             <button class="w-btn3" href="">Избранные</button>
             <button class="w-btn4" href="">Отправленные</button>
             <div class="block"></div>
             <a href="{% url 'user-profile' message.sender.username  %}" class="chat-block">{{ message.name }}</a>
-            <img class="chat-ava" src="{{ sender.image.url }}" alt="profile">
+            <img class="chat-ava" src="{{ message.sender.image.url }}" alt="profile">
             <div class="chat-block1">{{ message.created }}</div>
             <div class="chat-block2">{{ message.body|linebreaksbr }}</div>
         </container>
